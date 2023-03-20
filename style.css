@@ -1,0 +1,196 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    /* color variable */
+    --primary-darkColor: #3f4c6b;
+    --primary-lightColor: #606c88;
+
+    /* Font weight */
+    --fontW-bold: 600;
+    --fontW-medium: 500;
+    --fontW-normal: 400;
+}
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+    background: linear-gradient(
+        to right,
+        var(--primary-lightColor),
+        var(--primary-darkColor)
+    );
+}
+.wrapper {
+    width: 360px;
+    background: #fff;
+    border: 1px solid var(--primary-darkColor);
+    border-radius: 6px;
+    padding: 1.5em 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.wrapper .inputContainer {
+    text-align: center;
+    height: 2em;
+    position: relative;
+}
+.inputContainer input {
+    height: 100%;
+    width: 70%;
+    padding: 0 0.5em;
+    border: 1px solid var(--primary-lightColor);
+    border-radius: 2px;
+    outline: none;
+}
+.inputContainer button {
+    height: 100%;
+    padding: 0 1em;
+    width: 80px;
+    background: var(--primary-darkColor);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.inputContainer .placeholder {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--primary-lightColor);
+    pointer-events: none;
+    opacity: 1;
+    transition: 0.2s;
+}
+.inputContainer input:valid ~ .placeholder,
+.inputContainer input:focus ~ .placeholder {
+    opacity: 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    align-items: center;
+    padding: 0 0.5em;
+}
+.controls .filters span {
+    margin-right: 4px;
+    cursor: pointer;
+}
+.controls .filters span.active {
+    color: var(--primary-darkColor);
+}
+.controls > button {
+    width: 70px;
+    height: 30px;
+    border: 1px solid var(--primary-darkColor);
+    background: var(--primary-darkColor);
+    border-radius: 2px;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.todos_list {
+    margin-top: 2em;
+}
+.todos_list .list {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    transition: all 0.3s;
+    padding: 0.5em;
+    border-radius: 2px;
+}
+.todos_list .list:hover {
+    background: #eee;
+}
+.list .item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    cursor: pointer;
+}
+
+.list .item label {
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: -0.08em;
+    margin-left: -.5em;
+    line-height: 1;
+}
+.list .item label.checked {
+    text-decoration: line-through;
+    font-style: italic;
+    color: var(--primary-lightColor);
+}
+.list .item label p {
+    font-size: 0.95rem;
+    font-weight: var(--fontW-normal);
+}
+.list .item label .date {
+    font-size: 0.8rem;
+    color: var(--primary-lightColor);
+}
+.list .moreIcon {
+    position: relative;
+}
+.list .moreIcon .more {
+    cursor: pointer;
+}
+.item_control {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transform: translateX(-60%);
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    transform-origin: top;
+    scale: 0;
+    transition: 0.3s;
+    overflow: hidden;
+    z-index: 111;
+}
+.item_control.active {
+    scale: 1;
+}
+.item_control li {
+    cursor: pointer;
+    padding: 0.4em 0.7em;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.item_control li:hover {
+    background: #eee;
+}
+.item_control li .settingIcon {
+    color: var(--primary-darkColor);
+    font-size: 1rem;
+}
+.item_control li h4 {
+    color: var(--primary-darkColor);
+    font-size: 0.9rem;
+    font-weight: var(--fontW-normal);
+}
