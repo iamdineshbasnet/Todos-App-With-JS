@@ -3,7 +3,7 @@
 This repository contains a TODO CRUD (Create, Read, Update, Delete) app developed using HTML, CSS, and JavaScript. The app allows users to manage their tasks by adding, editing, and deleting TODO items.
 
 ## Demo
-Checkout the [demo](https://github.com/iamdineshbasnet/Todos-App-With-JS) of an app.
+Checkout the [demo](https://todos-app-with-js.vercel.app/) of an app.
 
 ## Features
 - Create new TODO items
